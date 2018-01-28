@@ -18,6 +18,6 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::resource('/companies', 'CompanyController@index');
-Route::resource('/markets', 'MarketController@index');
+Route::resource('/companies', 'CompanyController');
+Route::resource('/markets', 'MarketController');
 //Route::resource('/shares', 'ShareController@index');

@@ -20,20 +20,21 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Company::class, function () {
+$factory->define(App\Company::class, function (Faker\Generator $faker) {
     return [
+        '_user_id' => 1,
         'title' => 'SANYR SRL',
-        'slug' => 'sanyr',
         'office_address' => 'Via piazza Cavour 5, 10124, Turin, IT',
         'office_tele' => '+39 388 472 7268',
-        'description' => str_random(100),
+        'description' => $faker->paragraph,
         'web_url' => 'http://www.sanyr.com',
     ];
 });
 
-$factory->define(App\Market::class, function () {
+$factory->define(App\Market::class, function (Faker\Generator $faker) {
     return [
+        '_user_id' => 1,
         'title' => 'New York Stock Exchange',
-        'description' => str_random(100),
+        'description' => $faker->paragraph,
     ];
 });

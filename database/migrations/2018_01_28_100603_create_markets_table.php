@@ -13,7 +13,10 @@ class CreateMarketsTable extends Migration
     public function up()
     {
         Schema::create('markets', function (Blueprint $table) {
-            $table->increments('id');
+
+            $table->bigIncrements('id');
+            $table->bigInteger('_user_id');
+
             $table->string('title');
             $table->string('description')->nullable();
             $table->timestamps();

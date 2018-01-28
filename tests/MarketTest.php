@@ -14,10 +14,12 @@ class MarketTest extends TestCase
     public function testCompaonyCreation()
     {
         factory(App\Company::class)->create([
-            'title' => 'New York Stock Exchange'
+            'title' => 'New York Stock Exchange',
+            '_user_id' => 1,
         ]);
         $this->seeInDatabase('Companies', [
-            'title' => 'New York Stock Exchange'
+            'title' => 'New York Stock Exchange',
+            '_user_id' => 1,
         ]);
 
         echo('MarketTest: The Market Test is OK.');

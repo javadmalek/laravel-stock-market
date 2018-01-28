@@ -21,11 +21,11 @@ class CompanyTest extends TestCase
     {
         factory(App\Company::class)->create([
             'title' => 'SANYR SRL-test',
-            'slug' => 'sanyr-test',
+            '_user_id' => 1,
         ]);
         $this->seeInDatabase('Companies', [
             'title' => 'SANYR SRL-test',
-            'slug' => 'sanyr-test',
+            '_user_id' => 1,
         ]);
 
         echo('CompanyTest: The Companies Test is OK.');

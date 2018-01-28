@@ -58,7 +58,7 @@
                         <li><a href="{{ url('/markets') }}">Markets</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="{{ url('/shares') }}">Shares</a></li>
+                        <li><a href="{{ url('/stocks') }}">Stocks</a></li>
                     </ul>
                 @endif
 

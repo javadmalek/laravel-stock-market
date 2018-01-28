@@ -62,7 +62,7 @@ class CompanyController extends Controller
 
     public function edit($id)
     {
-        $company = Company::find($id);
+        $company = Auth::user()->companies->find($id);
         if ($company) {
             return View::make('companies.edit')->with('company', $company);
         }

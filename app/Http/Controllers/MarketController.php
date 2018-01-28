@@ -58,7 +58,7 @@ class MarketController extends Controller
 
     public function edit($id)
     {
-        $market = Market::find($id);
+        $market = Auth::user()->markets->find($id);
         if ($market) {
             return View::make('markets.edit')->with('market', $market);
         }

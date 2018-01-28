@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <!--Begin::Markets-->
+        <!--Begin::Stocks-->
         <div class="row">
             <div class="col-xl-12">
                 <div class="m-portlet m-portlet--mobile ">
@@ -11,7 +11,7 @@
                         <div class="m-portlet__head-caption">
                             <div class="m-portlet__head-title">
                                 <h3 class="m-portlet__head-text">
-                                    List of your Markets
+                                    List of your Stocks
                                 </h3>
                             </div>
                         </div>
@@ -19,34 +19,42 @@
                     <div class="m-portlet__body">
                         <!--begin: Datatable -->
                         <div class="m-section">
-                            <span class="m-section__sub">The list of all of your markets: </span>
+                            <span class="m-section__sub">The list of all of your stocks: </span>
                             <div class="m-section__content">
                                 <table class="table">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>title</th>
+                                        <th>Company</th>
+                                        <th>Market</th>
+                                        <th>Type</th>
+                                        <th>Price</th>
+                                        <th>Last Update</th>
                                         <th>actions
                                             <a class="btn m-btn--square  btn-success pull-right"
-                                               href="{{ URL::to('markets/create') }}">New Market</a></th>
+                                               href="{{ URL::to('stocks/create') }}">New Stock</a></th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($markets as $key => $market)
+                                    @foreach($stocks as $key => $stock)
                                         <tr>
-                                            <th scope="row">{{ $market->id }}</th>
-                                            <td>{{ $market->title }}</td>
+                                            <th scope="row">{{ $stock->id }}</th>
+                                            <td>{{ $stock->company->title }}</td>
+                                            <td>{{ $stock->market->title }}</td>
+                                            <td>{{ $stock->type }}</td>
+                                            <td>{{ $stock->price }}</td>
+                                            <td>{{ $stock->updated_at }}</td>
                                             <td>
-                                                {{ Form::open(array('url' => 'markets/' . $market->id, 'class' => 'pull-right')) }}
+                                                {{ Form::open(array('url' => 'stocks/' . $stock->id, 'class' => 'pull-right')) }}
                                                 {{ Form::hidden('_method', 'DELETE') }}
                                                 {{ Form::submit('Delete', array('class' => 'btn m-btn--square  btn-danger',
-                                                                         'onclick' => "return confirm('Are you sure you want to remove this market?')")) }}
+                                                                         'onclick' => "return confirm('Are you sure you want to remove this stock?')")) }}
                                                 {{ Form::close() }}
 
                                                 <a class="btn m-btn--square  btn-info"
-                                                   href="{{ URL::to('markets/' . $market->id) }}">View</a>
+                                                   href="{{ URL::to('stocks/' . $stock->id) }}">View</a>
                                                 <a class="btn m-btn--square  btn-info"
-                                                   href="{{ URL::to('markets/' . $market->id . '/edit') }}">Edit</a>
+                                                   href="{{ URL::to('stocks/' . $stock->id . '/edit') }}">Edit</a>
 
                                             </td>
                                         </tr>
@@ -60,6 +68,6 @@
                 </div>
             </div>
         </div>
-        <!--End::Markets -->
+        <!--End::Stocks -->
     </div>
 @endsection

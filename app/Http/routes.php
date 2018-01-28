@@ -20,4 +20,4 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 Route::resource('/companies', 'CompanyController');
 Route::resource('/markets', 'MarketController');
-Route::resource('/shares', 'StocksController');
+Route::resource('/stocks', 'StocksController');

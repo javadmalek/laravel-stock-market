@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use App\Company;
-use App\Http\Requests;
-use App\User;
 use Validator, Input, Redirect, Session;
 use View;
 

@@ -18,4 +18,23 @@ class Company extends Model
         return $this->hasMany('App\Stock', '_company_id')
             ->orderBy('updated_at', 'desc');
     }
+    public function stocksByNaN()
+    {
+        return $this->hasMany('App\Stock', '_company_id')
+            ->where('type','=','NaN')
+            ->orderBy('price', 'desc');
+    }
+    public function stocksByCommon()
+    {
+        return $this->hasMany('App\Stock', '_company_id')
+            ->where('type','=','COMMON')
+            ->orderBy('price', 'desc');
+    }
+    public function stocksByPreferred()
+    {
+        return $this->hasMany('App\Stock', '_company_id')
+            ->where('type','=','PREFERRED')
+            ->orderBy('price', 'desc');
+    }
+
 }

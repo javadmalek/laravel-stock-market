@@ -42,7 +42,7 @@
                                             <td>{{ $stock->company->title }}</td>
                                             <td>{{ $stock->market->title }}</td>
                                             <td>{{ $stock->type }}</td>
-                                            <td>{{ $stock->price }}</td>
+                                            <td>{{ number_format($stock->price) }} €</td>
                                             <td>{{ $stock->updated_at }}</td>
                                             <td>
                                                 {{ Form::open(array('url' => 'stocks/' . $stock->id, 'class' => 'pull-right')) }}

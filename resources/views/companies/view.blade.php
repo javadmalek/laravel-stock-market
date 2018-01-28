@@ -35,5 +35,66 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h3>{{ $company->title }}</h3>Preferred Stocks</div>
+                    <div class="panel-body">
+                        @foreach($company->stocksByPreferred as $key=> $stock)
+                            <div class="row" style="padding: 8px">
+                                <div class="col-8 col-sm-6">
+                                    {{$stock->market->title}}
+                                </div>
+                                <div class="col-4 col-sm-6">
+                                        <span class=" bg-info text-white pull-right">{{ number_format($stock->price) }}
+                                            €</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="panel panel-danger">
+                    <div class="panel-heading"><h3>{{ $company->title }}</h3>Common Stocks</div>
+                    <div class="panel-body">
+                        @foreach($company->stocksByCommon as $key=> $stock)
+                            <div class="row" style="padding: 8px">
+                                <div class="col-8 col-sm-6">
+                                    {{$stock->market->title}}
+                                </div>
+                                <div class="col-4 col-sm-6">
+                                        <span class=" bg-info text-white pull-right">{{ number_format($stock->price) }}
+                                            €</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="panel panel-info">
+                    <div class="panel-heading"><h3>{{ $company->title }}</h3>NaN Stocks</div>
+                    <div class="panel-body">
+                        @foreach($company->stocksByNaN as $key=> $stock)
+                            <div class="row" style="padding: 8px">
+                                <div class="col-8 col-sm-6">
+                                    {{$stock->market->title}}
+                                </div>
+                                <div class="col-4 col-sm-6">
+                                        <span class=" bg-info text-white pull-right">{{ number_format($stock->price) }}
+                                            €</span>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 @endsection

@@ -16,4 +16,8 @@ class Market extends Model
         return $this->hasMany('App\Stock', '_market_id')
             ->orderBy('updated_at', 'desc');
     }
+    public function stocksHighest()
+    {
+        return $this->stocks()->orderBy('price', 'desc')->first();
+    }
 }

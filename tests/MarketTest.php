@@ -11,13 +11,13 @@ class MarketTest extends TestCase
         $this->assertTrue(true);
     }
     use DatabaseTransactions;
-    public function testCompaonyCreation()
+    public function testMarketCreation()
     {
         factory(App\Company::class)->create([
             'title' => 'New York Stock Exchange',
             '_user_id' => 1,
         ]);
-        $this->seeInDatabase('Companies', [
+        $this->seeInDatabase('Market', [
             'title' => 'New York Stock Exchange',
             '_user_id' => 1,
         ]);

@@ -3,16 +3,19 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarketsTable extends Migration
+class CreateStocksTable extends Migration
 {
     public function up()
     {
-        Schema::create('markets', function (Blueprint $table) {
+        Schema::create('stocks', function (Blueprint $table) {
 
             $table->bigIncrements('id');
             $table->bigInteger('_user_id');
+            $table->bigInteger('_company_id');
+            $table->bigInteger('_market_id');
 
-            $table->string('title');
+            $table->string('type');
+            $table->string('price');
             $table->string('description')->nullable();
             $table->timestamps();
         });
@@ -21,6 +24,6 @@ class CreateMarketsTable extends Migration
 
     public function down()
     {
-        Schema::drop('markets');
+        Schema::drop('stocks');
     }
 }

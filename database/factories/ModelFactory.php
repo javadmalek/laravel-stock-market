@@ -38,3 +38,14 @@ $factory->define(App\Market::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph,
     ];
 });
+
+$factory->define(App\Stock::class, function (Faker\Generator $faker) {
+    return [
+        '_user_id' => 1,
+        '_company_id' => 1,
+        '_market_id' => 1,
+        'type' => 'PREFERRED',
+        'price' => $faker->numberBetween(0, 100),
+        'description' => $faker->paragraph,
+    ];
+});

@@ -12,4 +12,10 @@ class Company extends Model
     {
         return $this->belongsTo('App\User', '_user_id');
     }
+
+    public function stocks()
+    {
+        return $this->hasMany('App\Stock', '_company_id')
+            ->orderBy('updated_at', 'desc');
+    }
 }

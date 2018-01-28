@@ -17,7 +17,7 @@ class CompanyTest extends TestCase
     }
 
     use DatabaseTransactions;
-    public function testCompaonyCreation()
+    public function testCompanyCreation()
     {
         factory(App\Company::class)->create([
             'title' => 'SANYR SRL-test',
